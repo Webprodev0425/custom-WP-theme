@@ -10,8 +10,6 @@ Thumbs.db
 node_modules/
 
 # wordpress specific
-wp-config.php
-wp-config-sample.php
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
@@ -23,20 +21,11 @@ wp-content/cache/supercache/*
 
 
 
-/wp-admin/
 /wp-content/index.php
 /wp-content/languages
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
 
-# Configuration
-wp-config.php
 
 # Example themes
 /wp-content/themes/twenty*/
