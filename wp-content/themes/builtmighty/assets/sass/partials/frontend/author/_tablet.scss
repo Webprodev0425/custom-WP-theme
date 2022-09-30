@@ -1,0 +1,15 @@
+@include breakpoint(tablet) {
+  .author-header {
+    .author-intro {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 42px;
+    }
+    .author-info {
+      max-width: 100%;
+      width: 100%;
+      flex-basis: 100%;
+    }
+  }
+}

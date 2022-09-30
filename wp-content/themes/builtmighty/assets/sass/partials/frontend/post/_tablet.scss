@@ -1,0 +1,19 @@
+@include breakpoint(ipadpro) {
+  .post-container {
+    position: relative;
+    &:before {
+      content: "";
+      width: 100vw;
+      left: -30px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: $white;
+      z-index: -1;
+    }
+  }
+  .content-side {
+    width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}

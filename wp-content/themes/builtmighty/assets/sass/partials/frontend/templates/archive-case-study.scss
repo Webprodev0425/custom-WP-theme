@@ -1,0 +1,103 @@
+.post-type-archive-case_studies, .tax-industry {
+    .case-studies-archive {
+        background-color: $light_gray;
+        &__filter-bar {
+            background-color: $light_gray;
+            padding: 85px 0 58px;
+            @include breakpoint(440px) {
+                padding: 30px 20px;
+                label {
+                    font-size: 12px;
+                }
+            }
+            span {
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 35px;
+                padding-top: 18px;
+                @include breakpoint(440px) {
+                    font-size: 12px;
+                }
+            }
+            ul {
+                li {
+                    margin-bottom: 12px;
+                    font-weight: 600;
+                }
+            }
+        }
+        .case-study {
+            margin-bottom: 68px;
+            &__image {
+                margin: 0 0 33px;
+                @include breakpoint(440px) {
+                    margin-bottom: 15px;
+                }
+                img {
+                    border-radius: 8px;
+                }
+            }
+            &__industries {
+                margin-bottom: 15px;
+                @include breakpoint(440px) {
+                    margin-bottom: 10px;
+                }
+            }
+            &__industry {
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 700;
+                text-transform: uppercase;
+                a {
+                    color: #E5740B;
+                }                
+            }
+            &__short-description {
+                font-family: 'Gelion', sans-serif;
+                font-size: 32px;
+                font-weight: 40px;
+                letter-spacing: -0.5px;
+                margin: 0 0 22px;
+                @include breakpoint(440px) {
+                    font-size: 24px;
+                    line-height: 30px;
+                    margin-bottom: 15px;
+                }
+            }
+            &__client {
+                font-size: 16px;
+                line-height: 20px;
+                text-transform: uppercase;
+            }
+            &:not(:nth-child(3n+3)) {
+                margin-right: 12px;
+            }
+            &:last-child {
+                margin-right: unset;
+            }
+            @include breakpoint(991px) {
+                width: calc(50% - 12px) !important;
+                flex-basis: calc(50% - 12px) !important;
+                &:not(:nth-child(3n+3)) {
+                    margin-right: unset;
+                }
+                &:not(:nth-child(even)) {
+                    margin-right: auto;
+                }
+            }
+            @include breakpoint(768px) {
+                width: 100% !important;
+                flex-basis: 100% !important;
+            }
+        }
+        @include breakpoint(1390px) {
+            padding: 60px 25px;
+        }
+        @include breakpoint(440px) {
+            padding: 20px;
+        }
+    }
+    .blog__pagination {
+        background-color: $light_gray;
+    }
+}

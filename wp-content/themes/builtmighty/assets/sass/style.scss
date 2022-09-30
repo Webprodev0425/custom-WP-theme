@@ -1,0 +1,74 @@
+// base styles, mixins, container classes and variables
+@import
+    "./partials/frontend/top-level/normalize",
+    "./partials/frontend/top-level/fonts",
+    "./partials/frontend/top-level/variables",
+    "./partials/frontend/top-level/accessibility",
+    "./partials/frontend/top-level/mixins",
+    "./partials/frontend/top-level/animations",
+    "./partials/frontend/top-level/base",
+    "./partials/frontend/top-level/headings",
+    "./partials/frontend/top-level/forms",
+    "./partials/frontend/preset-classes/containers",
+    "./partials/frontend/preset-classes/flex",
+    "./partials/frontend/preset-classes/grid",
+
+// node and section specific styles
+// -- header
+    "./partials/frontend//header/sections/header",
+    "./partials/frontend/header/sections/header-menus",
+    "./partials/frontend/header/responsive/small-comp",
+    "./partials/frontend/header/responsive/tablet",
+    "./partials/frontend/header/responsive/mobile",
+
+// -- body
+    "./partials/frontend//body/index",
+    "./partials/frontend//body/tablet",
+    "./partials/frontend/body/mobile",
+
+// -- footer
+    "./partials/frontend/footer/index",
+
+// -- posts
+    "./partials/frontend/post/index",
+    "./partials/frontend/post/tablet",
+    "./partials/frontend/post/mobile",
+
+// -- author pages
+    "./partials/frontend/author/index",
+    "./partials/frontend/author/tablet",
+
+
+// -- global modules
+
+    "./partials/frontend/global-modules/checklist",
+    "./partials/frontend/global-modules/accordion",
+
+// -- blocks
+
+    "../../template-parts/flex/card_row/index.scss",
+    "../../template-parts/flex/case_studies/index.scss",
+    "../../template-parts/flex/client_list/index.scss",
+    "../../template-parts/flex/client_results/index.scss",
+    "../../template-parts/flex/form_block/index.scss",
+    "../../template-parts/flex/full_width_image/index.scss",
+    "../../template-parts/flex/grid_points/index.scss",
+    "../../template-parts/flex/hero/index.scss",
+    "../../template-parts/flex/team_block/index.scss",
+    "../../template-parts/flex/testimonial/index.scss",
+    "../../template-parts/flex/two_column_cta/index.scss",
+    "../../template-parts/flex/two_column_expandable_cards/index.scss",
+    "../../template-parts/flex/two_column_info/index.scss",
+    "../../template-parts/flex/img_with_txt_column_cta/index.scss",
+    "../../template-parts/flex/img_with_text/index.scss",
+    "../../template-parts/flex/custom_text_percentage/index.scss",
+    "../../template-parts/flex/how_it_works/index.scss",
+    "../../template-parts/flex/two_column_list_points/index.scss",
+    "../../template-parts/flex/case_studies_with_category/index.scss",
+
+// -- templates
+
+    "./partials/frontend/templates/single-case-study.scss",
+    "./partials/frontend/templates/archive-case-study.scss",
+    "./partials/frontend/templates/archive-case-study-hero.scss",
+    "./partials/frontend/templates/blog";

@@ -1,0 +1,132 @@
+.image-text-column-cta {
+    padding: 0;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -150px;
+    .container {        
+        padding: 150px 0px 75px;
+        position: relative;
+        @include breakpoint(991px) {
+            padding: 93px 55px 136px;
+        }
+        @include breakpoint(440px) {
+            padding: 90px 20px;
+        }
+    }
+    .dots-left__top {
+        position:absolute;
+        top: -170px;
+    }
+    
+    &__headings {
+        z-index: 9;
+        &__eyebrow-heading {
+            max-width: 800px;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(465px) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+        &__heading {
+            letter-spacing: -1.5px;
+            margin-left: auto;
+            margin-right: auto; 
+            @include block-heading(450px, 30px);
+            @include breakpoint(440px) {
+                font-size: 36px;
+                line-height: 40px;
+            }
+        }
+        &__subheading {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            margin-bottom: 0px;
+            text-align: center;
+            font-style: italic;
+            @include breakpoint(440px) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+        &__heading, 
+        &__subheading {
+            p:last-of-type {
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__ctas {
+        z-index: 9;
+        &__center__button {
+            margin-top:35px;
+            font-weight: 600;   
+            @extend %button;
+        }
+        &__column {
+            &--wrapper {
+                max-width: 560px;
+            }
+            &__heading {
+                font-size: 32px;
+                line-height: 40px;
+                margin-bottom: 20px;
+                letter-spacing: -0.5px;
+                font-weight: 600;
+            }
+            &__content {
+                font-size: 20px;
+                line-height: 32px;
+                margin-bottom: 27px;
+            }
+            &__button {
+                &:hover {
+                    color: #000000;
+                }
+            }
+            &__list {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    @extend %flex,
+                        %afs;
+                    font-size: 20px;
+                    line-height: 32px;
+                    &:not(:last-of-type) {
+                        margin-bottom: 16px;
+                    }
+                    img {
+                        margin: 6px 14px 0 0;
+                    }
+                }
+            }
+            &__button {
+                @extend %button;
+            }
+            @include breakpoint(768px) {
+                width: 100% !important;
+                flex-basis: 100% !important;
+                padding: 0 !important;
+                &:first-child {
+                    margin-bottom: 90px;
+                }
+            }
+        }
+    }
+    @include breakpoint(768px) {
+        padding: 0px;
+    }
+    @include breakpoint(465px) {
+        margin-top: -75px;
+    }
+}

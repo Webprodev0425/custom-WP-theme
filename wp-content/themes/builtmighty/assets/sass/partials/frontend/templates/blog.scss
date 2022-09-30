@@ -1,0 +1,255 @@
+.blog {
+    h1 {
+        @include breakpoint(768px) {
+            padding:0 24px
+        }
+    }
+    &__tag_cloud {
+        max-width: 650px;
+        a {
+            margin: 0 9px;
+        }
+    }
+    &__listings {
+        padding: 60px 0;
+        @include breakpoint(1390px) {
+            padding: 25px;
+        }
+    }
+    &__listing {
+        margin-bottom: 50px;
+        padding: 0px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px $gray;
+        &.categories {
+            padding: 24px 21px;
+            margin-bottom: 24px;
+        }
+        .post_meta {
+            padding: 30px;
+            .blog_cat {
+                color: #E5740B;
+                margin-bottom: 15px;
+            }
+        }
+        .post_img img {
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+        a {
+            color: $black;
+            &:hover {
+                color: $black;
+            }
+        }
+        &__meta {
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 32px;
+            letter-spacing: -0.5px;
+            justify-content: space-between;
+            color: #949494;
+            img {
+                margin-right: 8px;
+            }
+        }
+        &__title {
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: -0.5px;
+            margin-top: 0;
+        }
+        &:not(:nth-child(3n+3)) {
+            margin-right: 24px;
+        }
+        &:hover {
+            box-shadow: 0px 0px 15px $gray;
+        }
+        @include breakpoint(991px) {
+            width: calc(50% - 12px) !important;
+            flex-basis: calc(50% - 12px) !important;
+            &:not(:nth-child(3n+3)) {
+                margin-right: unset;
+            }
+            &:not(:nth-child(even)) {
+                margin-right: auto;
+            }
+        }
+        @include breakpoint(768px) {
+            width: 100% !important;
+            flex-basis: 100% !important;
+        }
+    }
+    &__pagination {
+        padding: 0 25px 45px;
+        justify-content: center;
+        align-items: end;
+        .page-numbers {
+            font-weight: 700;
+            font-family: 'Gelion', sans-serif;
+            font-size: 24px;
+            margin-right: 9px;
+            @include breakpoint(768px) {
+                font-size: 16px;
+            }
+            &.current {
+                font-size: 30px;
+                color: $black;
+                @include breakpoint(768px) {
+                    font-size: 18px;
+                }
+            }
+            
+        }
+    }
+}
+
+.blog_filter_options {
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    @include breakpoint (465px) {
+        display: block;
+        padding: 25px;
+    }
+    .tabs {
+        margin-right: 30px;
+        @include breakpoint(465px) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        .tab {
+            border-radius: 8px;            
+            color: #fff;
+            @include breakpoint(465px) {
+                width: 100%;
+            }
+            label {
+                background: linear-gradient(94.41deg, #D4121F 0%, #EA7441 97.49%);
+                font-size: 16px;
+                line-height: 21px;
+                &::after {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .search_form {
+        min-width: 300px;
+        border-radius: 8px;
+    }
+    .search_count {
+        padding: 12px 0;
+        color: #101010;
+        font-weight: 700;
+        @include breakpoint(465px) {
+            text-align: right;
+            font-size: 15px;
+        }
+    }
+    .is-search-form {
+        label {
+            background: linear-gradient(94.41deg, #D4121F 0%, #EA7441 97.49%) !important;
+            border-radius: 8px !important;
+        }
+        .is-search-input {
+            border: none !important;
+            background: linear-gradient(94.41deg, #D4121F 0%, #EA7441 97.49%) !important;
+            border-radius: 8px !important;
+            height: auto;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .is-search-submit {
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 600;
+            border: none;
+            height: auto;
+            right: 8px;
+            top: 10px;
+            border-radius: 6px;
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.blog_header {
+    text-align: center;
+    @include breakpoint(465px) {
+        display: block;
+        padding: 25px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 100px;
+        @include breakpoint(465px) {
+            font-size: 13px;
+        }
+    }
+    h1 {
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: -3.5px;
+        @include block-heading(750px, 50px);
+        @include breakpoint(465px) {
+            font-size: 45px;
+            line-height: 40px;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+    }
+    h4 {
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 400;
+        @include block-heading(880px, 100px);
+        @include breakpoint (465px) {
+            font-size: 15px;
+            line-height: 25px;
+            margin-bottom: 25px;
+        }
+    }
+}
+.featured-articles {
+    @include breakpoint(465px) {
+        padding: 25px;
+    }
+    .pagination {
+        width: 100%;
+        justify-content: space-around;
+        @include breakpoint(465px) {
+            justify-content: space-between;
+        }
+    }
+}
+.is-form-style {
+    @include breakpoint(465px) {
+        width: 100%;
+    }
+    .is-search-input {
+        border: none !important;
+        background: linear-gradient(94.41deg, #D4121F 0%, #EA7441 97.49%) !important;
+        border-radius: 8px !important;
+        height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    label {
+        background: linear-gradient(94.41deg,#d4121f,#ea7441 97.49%)!important;
+        border-radius: 8px!important;
+    }
+    .is-search-submit {
+        line-height: 21px !important;
+        font-weight: 600;
+        border: none !important;
+        height: auto !important;
+        right: 8px !important;
+        top: 8px !important;
+        border-radius: 6px !important;
+    }
+}

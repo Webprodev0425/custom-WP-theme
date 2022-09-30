@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+
+  &.container-wide {
+    max-width: $contain_wide;
+  }
+  &.container-lg {
+    max-width: $contain_large;
+  }
+  &.container-main {
+    max-width: $contain_main;
+  }
+  &.container-cs {
+    max-width: $contain_case_study;
+  }
+  &.container-sm {
+    max-width: $contain_small;
+  }
+}

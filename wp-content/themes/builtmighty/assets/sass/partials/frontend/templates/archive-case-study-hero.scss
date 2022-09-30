@@ -1,0 +1,27 @@
+.case_studies_hero {
+    padding: 70px 100px;
+    @include breakpoint(440px) {
+        padding: 50px 20px;
+    }
+    .container {
+        @include breakpoint(440px) {
+            display: grid;
+            .item_1_2 {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+            .item_1_2:last-child {
+                order: 1;
+            }
+            .item_1_2:first-child {
+                order: 2;
+                margin-top: 40px;
+            }
+            .hero__col_content {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+    }
+}

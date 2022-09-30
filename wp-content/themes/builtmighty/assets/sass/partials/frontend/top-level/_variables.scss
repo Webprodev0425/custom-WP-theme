@@ -1,0 +1,61 @@
+/**
+ * colors
+ */
+// - Built Mighty Colors
+$red: #D4121F;
+$orange: #E5740B;
+$light_gray: #F7F8FA;
+$gray: #C4C4C4;
+
+// -- primary
+$constant_blue: #D4121F;
+$apricot: #ff9e1a;
+
+// -- secondary
+$space: #0b1450;
+$retro_green: #33c99c;
+$black: #171717;
+$charcoal: $black;
+
+// -- backgrounds
+$harbor: #deddd7;
+$pearl: #f3f6f9;
+$white: #ffffff;
+$robbins_egg: #bcf0f2;
+$platypurple: #e1ddff;
+$sunrisey: #ffe8ba;
+
+// -- neutrals
+$med_charcoal: #757677;
+$light_charcoal: #dee1e3;
+
+// -- feedback
+$lava: #da3c01;
+$light_emerald: #b2f8df;
+$light_apricot: #ffe8ba;
+$light_constant: #cde4ff;
+
+// -- buttons
+$constant_hover: #0f3592;
+$apricot_hover: #f28116;
+
+/**
+ * typography
+ */
+
+// -- families
+$main_font: 'Inter V', sans-serif;
+$secondary_font: 'Gelion', serif;
+
+// -- sizes
+$in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+
+/**
+ * containers
+ */
+$contain_full: 100%;
+$contain_case_study: 1114px;
+$contain_main: 1340px;
+$contain_wide: 1600px;
+$contain_large: 1442px;
+$contain_small: 960px;

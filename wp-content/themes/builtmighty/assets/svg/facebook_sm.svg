@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="19px" viewBox="0 0 11 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>facebook_sm</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop_footer_1" transform="translate(-1471.000000, -537.000000)" fill="#FFFFFF">
+            <g id="facebook_sm" transform="translate(1471.400000, 537.000000)">
+                <path d="M6.49080464,19 L6.49080464,10.3332583 L9.43918483,10.3332583 L9.88059625,6.95561469 L6.49080464,6.95561469 L6.49080464,4.79913851 C6.49080464,3.82123186 6.76598565,3.15484324 8.18727267,3.15484324 L10,3.1540047 L10,0.13307647 C9.68640582,0.09198796 8.61041235,0 7.35858517,0 C4.74504538,0 2.95585886,1.57402553 2.95585886,4.46472831 L2.95585886,6.95561469 L0,6.95561469 L0,10.3332583 L2.95585886,10.3332583 L2.95585886,19 L6.49080464,19 Z" id="facebook"></path>
+            </g>
+        </g>
+    </g>
+</svg>

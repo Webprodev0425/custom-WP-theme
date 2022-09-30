@@ -1,0 +1,11 @@
+@include breakpoint(ipadls) {
+  #breadcrumbs {
+    margin-top: 35px;
+    margin-left: 60px;
+  }
+}
+@include breakpoint(ipadpro) {
+  #site-content {
+    padding: 0;
+  }
+}

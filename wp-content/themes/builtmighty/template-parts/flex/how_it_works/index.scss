@@ -1,0 +1,117 @@
+.how-it-works {
+    padding-bottom: 180px;
+    @include breakpoint(440px) {
+        padding: 20px;
+    }
+    &_content {
+        display: flex;
+        @include breakpoint(440px) {
+            display: grid;
+        }
+        &_text {
+            width: 50%;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding-right: 100px;
+            @include breakpoint(440px) {
+                order: 2;
+                width: 100%;
+                padding: 0;
+            }
+        }
+        &_image {
+            width: 50%;
+            margin-top: auto;
+            margin-bottom: auto;
+            @include breakpoint(440px) {
+                order: 1;
+                width: 100%;
+            }
+        }
+    }
+    &_blocks {
+        width: 100%;
+        margin-top: -120px;
+        @include breakpoint(440px) {
+            margin-top: 0;
+        }
+        &_items {
+            display: flex;
+            @include breakpoint(440px) {
+                display: block;
+            }
+        }
+        &_item {
+            background: linear-gradient(180deg, #E6740B 0%, #D4121F 100%);
+            border-radius: 8px;
+            padding: 25px;
+            margin-right: 25px;
+            display: flex;
+            &:last-child {
+                margin-right: 0;
+            }
+            @include breakpoint(440px) {
+                margin-right: 0%;
+                margin-bottom: 15px;
+            }
+            &_img {
+                width: 7%;
+                img {
+                    margin-top: 8px;
+                }
+            }
+            &_txt {
+                width: 93%;
+                &__heading {
+                    font-size: 24px;
+                    line-height: 32px;
+                    letter-spacing: -0.5px;
+                    color: #ffffff;
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                    @include breakpoint(440px) {
+                        font-size: 16px;
+                        line-height: 25px;
+                    }
+                }
+                &__content {
+                    font-size: 20px;
+                    line-height: 32px;
+                    color: #ffffff;
+                    @include breakpoint(440px) {
+                        font-size: 16px;
+                        line-height: 25px;
+                    }
+                }
+            }
+        }
+    }
+    &__heading {
+        letter-spacing: -1.5px;
+        margin-bottom: 50px;
+        @include breakpoint(440px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__subheading {
+        letter-spacing: -1.1px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        line-height: 40px;
+        @include breakpoint(440px) {
+            font-size: 16px;
+            line-height: 25px;
+            margin-top: 0;
+        }
+    }
+    &__content {
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 400;
+        @include breakpoint(440px) {
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: 400;
+        }
+    }
+}

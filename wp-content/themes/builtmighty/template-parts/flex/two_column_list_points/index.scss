@@ -1,0 +1,123 @@
+.two-column-list-points {
+    margin-bottom: 0px;
+    position: relative;
+    .container {
+        @include breakpoint(768px) {
+            flex-direction: column !important;
+        }
+        .dots-left {
+            position:absolute;
+            bottom:100px;
+            left:-200px;
+            &__bottom {
+                position:absolute;
+                bottom:-170px;
+                left:0px;
+                z-index: 9;
+            }
+        }
+    }
+    &__content,
+    &__list {
+        @include breakpoint(768px) {
+            width: 100% !important;
+            flex-basis: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+    &__gray-bg {
+        .container {
+            background-color: $light_gray;
+            padding: 90px 110px;
+            border-radius: 8px;
+            @include breakpoint(768px) {
+                padding: 50px 45px;
+            }
+            @include breakpoint(465px) {
+                padding: 90px 20px;
+                margin-top: -50px;
+            }
+        }
+        .two-column-list-points__list {
+            font-size: 20px;
+            line-height: 32px;
+            @include breakpoint(465px) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+            &__item {
+                &:not(:last-child) {
+                    margin-bottom: 25px;
+                }
+                > div:first-child {
+                    margin-right: 14px;
+                    padding-top: 6px;
+                }
+                &__icon {
+                    width: 20px;
+                    max-width: 20px;
+                }
+            }
+        }
+    }
+    &__white-bg {
+        padding: 90px 50px;
+        .two-column-list-points {
+            &__content {
+                font-size: 20px;
+                line-height: 32px;
+                padding-right: 45px;
+            }
+            &__list {
+                padding-left: 45px;
+                &__heading {
+                    font-family: 'Gelion', sans-serif;
+                    font-weight: 600;
+                    font-size: 40px;
+                    line-height: 40px;
+                    letter-spacing: -1.1px;
+                    margin: 0 0 60px;
+                }
+                &__item {
+                    &__icon {
+                        width: 16px;
+                        max-width: 16px;
+                        margin: 8px 8px 0 0;
+                    }
+                    &__heading {
+                        font-family: 'Gelion', sans-serif;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 32px;
+                        letter-spacing: -.5px;
+                        margin: 0 0 13px;
+                    }
+                    &__content {
+                        font-size: 20px;
+                        line-height: 32px;
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 55px;
+                    }
+                }
+            }
+        }
+    }
+    &__heading {
+        letter-spacing: -1.5px;
+        @include block-heading(465px, 47px);
+        @include breakpoint(768px) {
+            max-width: 100%;
+        }
+        @include breakpoint(465px) {
+            margin-bottom: 15px;
+        }
+    }
+    @include breakpoint(1340px) {
+        padding: 0 45px;
+    }
+    @include breakpoint(465px) {
+        padding: 0px;
+    }
+}

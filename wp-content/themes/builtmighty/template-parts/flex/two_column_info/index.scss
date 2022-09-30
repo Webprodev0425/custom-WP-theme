@@ -1,0 +1,129 @@
+.two-column-info {
+    padding: 90px 50px 0px;
+    @include breakpoint(465px) {
+        padding: 90px 20px 0;
+    }
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    &.black {
+        background-color: $black;
+        color: $white;
+    }
+    &__top-heading {   
+        font-weight: 600;
+        margin: 0 0 75px;
+        p {
+            margin: 0;
+        }
+    }
+    &__eyebrow-heading {
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+    &__heading {
+        font-family: 'Gelion', sans-serif;
+        font-size: 56px;
+        line-height: 56px;
+        font-weight: 600;
+        margin: 0;
+        p {
+            margin: 0;
+        }
+    }
+    .pb_enable {
+        padding-bottom: 90px;
+    }
+    &__right-column {
+        padding-left: 50px;
+        @include breakpoint(465px) {
+            order: 1;
+            padding-left: 0%;
+        }
+    }
+    &__left-column {
+        @include breakpoint(465px) {
+            order: 2;
+            margin-top: 40px;
+        }
+    }
+    &__right-column,
+    &__left-column {
+        @include breakpoint(768px) {
+            grid-column: 1 / span 2 !important;
+        }
+    }
+    &.white_text {
+        .two-column-info__content-text {
+            color: #ffffff;
+        }
+    }
+    &__content-text {
+        font-size: 20px;
+        line-height: 32px;
+        @include breakpoint(465px) {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        h2 {
+            letter-spacing: -1.5px;
+            @include breakpoint(465px) {
+                text-align: center;
+            }
+        }
+        h3 {
+            font-family: 'Gelion', sans-serif;
+            font-size: 32px;
+            letter-spacing: -0.5px;
+            line-height: 40px;
+            font-weight: 600;
+            @include breakpoint(465px) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+        p:first-child {
+            margin-top: 0;
+        }
+    }
+    &__statistics {
+        margin-bottom: 42px;
+        .stat {
+            &__figure {
+                font-family: 'Gelion', sans-serif;
+                color: $red;
+                font-size: 56px;
+                line-height: 56px;
+                font-weight: 600;
+                margin: 0 0 16px;
+            }
+            &__title {
+                font-family: 'Inter V', sans-serif;
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__cta {
+        .button {
+            border-radius: 100px;
+            font-size: 16px;
+            line-height: 21px;
+            padding: 15px 30px;
+            border: solid 1px;
+            margin-top: 40px;
+            font-weight: 600;
+            color: #ffffff;
+            display: inline-block;
+            &:hover {
+                color: $white;
+            }
+            @include breakpoint(465px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

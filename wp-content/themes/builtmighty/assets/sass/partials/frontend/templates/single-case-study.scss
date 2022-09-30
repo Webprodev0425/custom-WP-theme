@@ -1,0 +1,106 @@
+.single-case_studies {
+    .single_case_study {
+        padding: 100px 0;
+        background-size: cover;
+        display: flex;
+        @include breakpoint(440px) {
+            padding: 90px 20px 50px;
+            display: grid;
+            position: relative;
+        }
+    }
+    .cs-hero {
+        &-left {
+            width: 60%;
+            padding-right: 30px;
+            @include breakpoint(440px) {
+                width: 100%;
+                order: 2;
+                padding: 0;
+            }
+        }
+        &-right {
+            width: 40%;
+            padding-left: 30px;
+            @include breakpoint(440px) {
+                width: 100%;
+                order: 1;
+                padding: 0;
+            }
+        }
+        &__back-to-cs {
+            @include ease(.3s, all);
+            color: $black;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 63px;
+            text-transform: uppercase;
+            img {
+                @include ease(.3s, all);
+            }
+            &:hover {
+                color: $red;
+                img {
+                    margin-right: 5px;
+                }
+            }
+            @include breakpoint(440px) {
+                position: absolute;
+                top: 30px;
+            }
+        }
+        &__title {
+            font-family: "Gelion", sans-serif;
+            font-size: 70px;
+            line-height: 70px;
+            font-weight: 600;
+            margin: 0 0 60px;
+            letter-spacing: -3.5px;
+            @include breakpoint(440px) {
+                font-size: 45px;
+                line-height: 40px;
+                margin: 30px 0;
+            }
+        }
+        &__meta {
+            margin-bottom: 80px;
+            @include breakpoint(440px) {
+                justify-content: space-between;
+                margin-bottom: 0;
+            }
+            &__group {
+                min-width: 250px;
+                font-family: "Inter V", sans-serif;
+                @include breakpoint(440px) {
+                    min-width: 0;
+                }
+            }
+            &__label {
+                color: #E5740B;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 20px;
+                text-transform: uppercase;
+                margin-bottom: 9px;
+                @include breakpoint(440px) {
+                    font-size: 12px;
+                }
+            }
+            &__value {
+                font-size: 20px;
+                line-height: 32px;
+                font-weight: 400;
+                @include breakpoint(440px) {
+                    font-size: 16px
+                }
+                a {
+                    @include ease(.3s, all);
+                    color: $black;
+                    &:hover {
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+}

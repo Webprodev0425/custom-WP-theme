@@ -1,0 +1,102 @@
+@include breakpoint(ipadls) {
+  #site-navigation {
+    .menu-header-navigation-container {
+      width: 100%;
+      #primary-menu {
+        > li {
+          width: 100%;
+          position: inherit;
+          &.menu-item-has-children {
+            ul.sub-menu {
+              min-height: 100vh;
+              padding: 50px 13px 13px;
+              visibility: visible;
+              top: 0;
+              left: 100%;
+              transform: none;
+              transition: 0.3s all ease;
+              width: 100%;
+              .close-sub-menu {
+                position: absolute;
+                cursor: pointer;
+                top: 50px;
+                right: 45px;
+                padding-left: 21px;
+                &:after,
+                &:before {
+                  content: "";
+                  height: 15px;
+                  border: 1px solid black;
+                  width: 2px;
+                  position: absolute;
+                  left: 0;
+                }
+                &:after {
+                  transform: rotate(45deg);
+                  top: 4px;
+                }
+                &:before {
+                  transform: rotate(-45deg);
+                  top: 14px;
+                }
+              }
+            }
+            &.active {
+              ul.sub-menu {
+                left: 0 !important;
+                transition: 0.3s all ease;
+                z-index: 1;
+              }
+            }
+          }
+          > a {
+            display: block;
+            color: $space;
+            &:after {
+              right: 0;
+              top: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint(ipadls) {
+  #bm-mobile-nav {
+    flex-wrap: nowrap;
+    #site-navigation {
+      #primary-menu {
+        padding: 65px 0 0px;
+        li.menu-item-has-children {
+          ul.sub-menu {
+            padding: 90px 51px 51px;
+            li {
+              a {
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #site-header.fixed_menu {
+    z-index: 9999999;
+    position: fixed;
+    margin-bottom: 0;
+    top: 0px;
+  }
+}
+
+@include breakpoint(mobile) {
+  #site-header {
+    .logo {
+      width: 210px;
+    }
+    .search-form,
+    #site-cta-menu {
+      display: none;
+    }
+  }
+}

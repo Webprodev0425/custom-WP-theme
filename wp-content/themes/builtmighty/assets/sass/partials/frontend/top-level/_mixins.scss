@@ -1,0 +1,169 @@
+// add easing
+@mixin ease($duration, $property) {
+  transition: $duration $property ease;
+  &:hover {
+    transition: $duration $property ease;
+  }
+}
+
+@mixin block-heading($maxWidth, $marginBottom) {
+  margin-bottom: $marginBottom;
+  margin-top: 0;
+  max-width: $maxWidth;
+  p {
+      margin: 0;
+  }
+}
+
+@mixin form-style($buttonBackground, $buttonText) {
+  margin: 0 auto;
+
+  abbr {
+    display: none;
+  }
+  input[type="text"] {
+    width: calc(100% - 3px);
+    padding: 14px 15px 14px 18px;
+    font-size: 18px;
+    background: $white;
+    height: 55px;
+    border: 1px solid $apricot;
+    border-radius: 40px;
+    &:focus {
+      position: relative;
+      border: 1px solid $constant_blue;
+      z-index: 1;
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    @include ease(0.3s, all);
+    background: $buttonBackground;
+    color: $buttonText;
+    width: 100%;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 27px;
+    border-style: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background: $apricot_hover;
+    }
+  }
+}
+
+// draw and meet borders
+@mixin draw-meet($startColor, $endColor) {
+  box-shadow: inset 0 0 0 2px $startColor;
+  background: none;
+  border: 0;
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.25s;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    z-index: 1;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    top: 0;
+    left: 0;
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover::before {
+    border-top-color: $endColor;
+    border-right-color: $endColor;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+  &:hover::after {
+    border-bottom-color: $endColor;
+    border-left-color: $endColor;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
+      height 0.25s ease-out 0.75s;
+  }
+  &:hover::after {
+    border-bottom-color: $endColor;
+    border-left-color: $endColor;
+    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+  }
+}
+
+// responsive
+@mixin breakpoint($point) {
+  @if $point == add-pad {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  } @else if $point == small-comp {
+    @media (max-width: 1550px) {
+      @content;
+    }
+  } @else if $point == ipadls {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  } @else if $point == ipadpro {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 775px) {
+      @content;
+    }
+  } @else if $point == optin {
+    @media (max-width: 750px) {
+      @content;
+    }
+  } @else if $point == form {
+    @media (max-width: 500px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 440px) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+}
+
+%button {
+  color: $red;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 15px 37px 14px;
+  border: 1px solid;
+  border-radius: 100px;
+  span {
+    @include ease(0.3s, all);
+  }
+  &:hover {
+      color: $black;
+      span {
+          margin-left: 12px;
+      }
+  }
+  @include breakpoint(440px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

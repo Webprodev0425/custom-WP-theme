@@ -1,0 +1,111 @@
+.form-block {
+    position: relative;
+    background: linear-gradient(100deg, rgba(212, 18, 31, 1) 0%, rgba(234, 116, 65, 1) 100%);
+    padding: 121px 121px 132px;
+    &__heading {
+        letter-spacing: -1.5px;
+        
+        @include block-heading(100%, 33px);
+        p {
+            font-size: 56px;
+            line-height: 56px;
+        }
+    }
+    &__content {
+        color: $white;
+        padding-right: 55px;
+        font-size: 20px;
+        line-height: 32px;
+        &__content {
+            max-width: 490px;
+        }
+        @include breakpoint(768px) {
+            width: 100% !important;
+            flex-basis: 100% !important;
+            padding-right: 0 !important;
+            margin-bottom: 25px;
+        }
+    }
+    &__form {
+        padding-left: 55px;
+        .gform_confirmation_message {
+            color: $white;
+            font-size: 20px;
+        }
+        form {
+            .gform_fields {
+                grid-row-gap: 22px !important;
+            }
+            .gfield {
+                label {
+                    display: none;
+                }
+                input, textarea {
+                    font-family: 'Inter V';
+                    font-size: 16px !important;
+                    line-height: 21px;
+                    padding: 15px 24px 14px !important;
+                    width: 100%;
+                    background-color: rgba($white, .1);
+                    color: $white;
+                    border-style: none;
+                }
+                input {
+                    border-radius: 100px
+                }
+                textarea {
+                    border-radius: 20px;
+                    height: 220px !important;
+                }
+            }
+            .gform_footer {
+                padding-bottom: 0 !important;
+                .gform_button {
+                    @extend %button;
+                    @include breakpoint(465px) {
+                        font-size: 16px;
+                    }
+                    color: $white;
+                    background: $red;
+                    border-color: $red;
+                    padding: 15px 29px 14px;
+                    margin-bottom: 0 !important;
+                    cursor: pointer;
+                }
+                input {
+                    @include breakpoint(465px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @include breakpoint(768px) {
+            width: 100% !important;
+            flex-basis: 100% !important;
+            padding-left: 0 !important;
+        }
+    }
+    .dots-left__bottom {
+        position: absolute;
+        bottom:-170px;
+        left:0px;
+    }
+    .dots-right__bottom {
+        position: absolute;
+        right: 0%;
+        bottom: -170px;
+    }
+    @include breakpoint(991px) {
+        padding: 80px 35px;
+    }
+    @include breakpoint(768px) {
+        padding: 121px 45px 132px;    
+    }
+    @include breakpoint(465px) {
+        padding: 90px 20px;
+        text-align: center;
+    }
+    ::placeholder {
+        color: rgba($white, .36);
+    }
+}

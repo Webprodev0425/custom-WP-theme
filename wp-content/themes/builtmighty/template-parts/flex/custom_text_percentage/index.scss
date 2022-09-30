@@ -1,0 +1,78 @@
+.content_percentage {
+    padding: 70px 0;
+    @include breakpoint(440px) {
+        padding: 20px;
+    }
+    .container {
+        display: flex;
+        @include breakpoint(440px) {
+            display: block;
+        }
+    }
+    &_subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        @include breakpoint(440px) {
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+    &_title {
+        letter-spacing: -1.5px;
+        margin-top: 0%;
+        @include breakpoint(440px) {
+            text-align: center;
+        }
+    }
+    &_text{
+        width: 30%;
+        @include breakpoint(440px) {
+            width: 100%;
+        }
+    }
+    &_percentages {
+        width: 70%;
+        padding-left: 60px;
+        @include breakpoint(440px) {
+            width: 100%;
+            padding-left: 0px;
+        }
+        &_items {
+            display: flex;
+            justify-content: space-between;
+            @include breakpoint(440px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        &_item {
+            @include breakpoint(440px) {
+                margin-bottom: 20px;
+            }
+        }
+        &_item_value {
+            color: #E5740B;
+            font-size: 56px;
+            line-height: 56px;
+            letter-spacing: -1.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        &_item_title {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &_content {
+        font-size: 20px;
+        line-height: 32px;
+        margin-top: 45px;
+        @include breakpoint(440px) {
+            font-size: 16px;
+            line-height: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+    }
+}

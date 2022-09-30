@@ -1,0 +1,54 @@
+.client-list {    
+    padding-top: 0px;
+    padding-bottom: 13px;
+    .container {
+        background-color: $light_gray;
+        padding-top: 60px;
+        padding-bottom: 12px;
+        @include breakpoint(1199px) {
+            padding: 20px 45px 0;
+        }
+        @include breakpoint(465px) {
+            padding: 60px 20px;
+        }
+    }
+    .jfsb {
+        padding-left: 100px;
+        padding-right: 100px;
+        @include breakpoint(1199px) {
+            padding: 0%;
+        }
+    }
+    &__heading {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.5px;
+        margin-top: 0;
+        margin-bottom: 45px;
+        @include breakpoint(465px) {
+            font-size: 18px;
+            line-height: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+    &__client {
+        @include ease(0.3s, all);
+        margin-bottom: 72px;
+        &:hover {
+            transform: scale(1.1);
+        }
+        @include breakpoint(1199px) {
+            padding: 0 12px
+        }
+        @include breakpoint(768px) {
+            width: calc(100% / 3) !important;
+            flex-basis: calc(100% / 3) !important;
+        }
+        @include breakpoint(465px) {
+            width: calc(100% / 4) !important;
+            flex-basis: calc(100% / 4) !important;
+            margin-bottom: 30px;
+        }
+    }
+}

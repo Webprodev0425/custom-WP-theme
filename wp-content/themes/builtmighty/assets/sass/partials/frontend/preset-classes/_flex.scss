@@ -1,0 +1,394 @@
+// flex
+
+/*
+* ##--------------------#
+* ## extends
+* #---------------------#
+**/
+
+%flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-shrink: 0;
+}
+%row {
+  flex-direction: row;
+  -webkit-flex-flow: row wrap;
+}
+%col {
+  flex-direction: column;
+  -webkit-flex-flow: column wrap;
+}
+%afs {
+  align-items: flex-start;
+}
+%afc {
+  align-items: center;
+}
+%afe {
+  align-items: flex-end;
+}
+// horizontal alignments
+
+%jfs {
+  justify-content: flex-start;
+}
+%jfc {
+  justify-content: center;
+}
+%jfe {
+  justify-content: flex-end;
+}
+%jfsa {
+  justify-content: space-around;
+}
+%jfsb {
+  justify-content: space-between;
+}
+%jfse {
+  justify-content: space-evenly;
+}
+%full {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+/*
+* ##--------------------#
+* ## layout structure
+* #---------------------#
+**/
+
+.flex {
+  @extend %flex;
+
+  &.row {
+    @extend %row;
+    @extend %jfs;
+    &.nowrap {
+      flex-flow: nowrap;
+      -webkit-flex-flow: nowrap;
+    }
+  }
+  &.col {
+    @extend %col;
+
+    &.nowrap {
+      -webkit-flex-flow: column;
+    }
+  }
+
+  // image fix
+  .imgfix {
+    align-self: center;
+  }
+
+  /*
+      * ##--------------------#
+      * ## columns
+      * #---------------------#
+      **/
+
+  .item_full {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .item_1_2 {
+    width: 50%;
+    flex-basis: 50%;
+  }
+
+  // with gutter
+  .item_1_2_gut {
+    width: calc(50% - 12px);
+    flex-basis: calc(50% - 12px);
+  }
+
+  // thirds
+  .item_1_3 {
+    width: calc(100% / 3);
+    flex-basis: calc(100% / 3);
+  }
+  
+  .item_2_3 {
+    width: calc((100% / 3) * 2);
+    flex-basis: calc((100% / 3) * 2);
+  }
+
+  // thirds with gutter
+  .item_1_3_gut {
+    width: calc((100% / 3) - 12px);
+    flex-basis: calc((100% / 3) - 12px);
+  }
+  .item_2_3_gut {
+    width: calc(((100% / 3) * 2) - 12px);
+    flex-basis: calc(((100% / 3) * 2) - 12px);
+  }
+
+  // thirds with gutter, adapted for blog
+  .item_1_3_gut-blog {
+    width: calc((100% / 3) - 24px);
+    flex-basis: calc((100% / 3) - 24px);
+  }
+
+  // fourths
+  .item_1_4 {
+    width: 25%;
+    flex-basis: 25%;
+  }
+  .item_3_4 {
+    width: 75%;
+    flex-basis: 75%;
+  }
+
+  // with gutter
+  .item_1_4_gut {
+    width: calc(25% - 12px);
+    flex-basis: calc(25% - 12px);
+  }
+  .item_3_4_gut {
+    width: calc(75% - 12px);
+    flex-basis: calc(75% - 12px);
+  }
+
+  // fifths
+  .item_1_5 {
+    width: 20%;
+    flex-basis: 20%;
+  }
+  .item_2_5 {
+    width: 40%;
+    flex-basis: 40%;
+  }
+  .item_3_5 {
+    width: 60%;
+    flex-basis: 60%;
+  }
+  .item_4_5 {
+    width: 80%;
+    flex-basis: 80% !important;
+  }
+
+  // with gutter
+  .item_1_5_gut {
+    width: calc(20% - 12px);
+    flex-basis: calc(20% - 12px);
+  }
+  .item_2_5_gut {
+    width: calc(40% - 12px);
+    flex-basis: calc(40% - 12px);
+  }
+  .item_3_5_gut {
+    width: calc(60% - 12px);
+    flex-basis: calc(60% - 12px);
+  }
+  .item_4_5_gut {
+    width: calc(80% - 12px);
+    flex-basis: calc(80% - 12px) !important;
+  }
+
+  // sixths
+  .item_1_6 {
+    width: calc(100% / 6);
+    flex-basis: calc(100% / 6);
+  }
+  .item_5_6 {
+    width: calc((100% / 6) * 5);
+    flex-basis: calc((100% / 6) * 5);
+  }
+
+  // sevenths
+  .item_1_7 {
+    width: calc(100% / 7);
+    flex-basis: calc(100% / 7);
+  }
+  .item_2_7 {
+    width: calc((100% / 7) * 2);
+    flex-basis: calc((100% / 7) * 2);
+  }
+  .item_3_7 {
+    width: calc((100% / 7) * 3);
+    flex-basis: calc((100% / 7) * 3);
+  }
+  .item_4_7 {
+    width: calc((100% / 7) * 4);
+    flex-basis: calc((100% / 7) * 4);
+  }
+  .item_5_7 {
+    width: calc((100% / 7) * 5);
+    flex-basis: calc((100% / 7) * 5);
+  }
+  .item_6_7 {
+    width: calc((100% / 7) * 6);
+    flex-basis: calc((100% / 7) * 6);
+  }
+
+  // eighths
+  .item_1_8 {
+    width: calc(100% / 8);
+    flex-basis: calc(100% / 8);
+  }
+  .item_3_8 {
+    width: calc((100% / 8) * 3);
+    flex-basis: calc((100% / 8) * 3);
+  }
+  .item_5_8 {
+    width: calc((100% / 8) * 5);
+    flex-basis: calc((100% / 8) * 5);
+  }
+  .item_7_8 {
+    width: calc((100% / 8) * 7);
+    flex-basis: calc((100% / 8) * 7);
+  }
+
+  // ninths
+  .item_1_9 {
+    width: calc(100% / 9);
+    flex-basis: calc(100% / 9);
+  }
+  .item_2_9 {
+    width: calc((100% / 9) * 2);
+    flex-basis: calc((100% / 9) * 2);
+  }
+  .item_4_9 {
+    width: calc((100% / 9) * 4);
+    flex-basis: calc((100% / 9) * 4);
+  }
+  .item_5_9 {
+    width: calc((100% / 9) * 5);
+    flex-basis: calc((100% / 9) * 5);
+  }
+  .item_7_9 {
+    width: calc((100% / 9) * 7);
+    flex-basis: calc((100% / 9) * 7);
+  }
+  .item_8_9 {
+    width: calc((100% / 9) * 8);
+    flex-basis: calc((100% / 9) * 8);
+  }
+
+  // tenths
+  .item_1_10 {
+    width: 10%;
+    flex-basis: 10%;
+  }
+  .item_3_10 {
+    width: 30%;
+    flex-basis: 30%;
+  }
+  .item_7_10 {
+    width: 70%;
+    flex-basis: 70%;
+  }
+  .item_9_10 {
+    width: 90%;
+    flex-basis: 90%;
+  }
+
+  // twelfths
+  .item_1_12 {
+    width: calc(100% / 12);
+    flex-basis: calc(100% / 12);
+  }
+  .item_5_12 {
+    width: calc((100% / 12) * 5);
+    flex-basis: calc((100% / 12) * 5);
+  }
+  .item_7_12 {
+    width: calc((100% / 12) * 7);
+    flex-basis: calc((100% / 12) * 7);
+  }
+  .item_11_12 {
+    width: calc((100% / 12) * 11);
+    flex-basis: calc((100% / 12) * 11);
+  }
+
+  // relative to set width
+  .item_less_300 {
+    max-width: calc(100% - 300px);
+    width: calc(100% - 300px);
+    flex-basis: calc(100% - 300px);
+  }
+  .item_300 {
+    max-width: 300px;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  // pixel widths
+  .item_100 {
+    max-width: 100px;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .item_less_100 {
+    max-width: calc(100% - 100px);
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .item_800 {
+    max-width: 800px;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  /*
+    * ##--------------------#
+    * ## alignments
+    * #---------------------#
+  **/
+
+  // vertical alignments
+
+  &.afs {
+    @extend %afs;
+  }
+  &.afc {
+    @extend %afc;
+  }
+  &.afe {
+    @extend %afe;
+  }
+  // horizontal alignments
+
+  &.jfs {
+    @extend %jfs;
+  }
+  &.jfc {
+    @extend %jfc;
+  }
+  &.jfe {
+    @extend %jfe;
+  }
+  &.jfsa {
+    @extend %jfsa;
+  }
+  &.jfsb {
+    @extend %jfsb;
+  }
+  &.jfse {
+    @extend %jfse;
+  }
+  &.full {
+    @extend %full;
+  }
+}
+
+/*
+  * ##--------------------#
+  * ## responsive
+  * #---------------------#
+**/
+@include breakpoint(ipadls) {
+  .item_1_2 {
+    &:first-child {
+      padding-right: 22.5px;
+    }
+    &:last-child {
+      padding-left: 22.5px;
+    }
+  }
+}

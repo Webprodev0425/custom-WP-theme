@@ -1,0 +1,69 @@
+.card-row {
+    padding: 87px 50px;
+    @include breakpoint(440px) {
+        padding: 20px;
+    }
+    &__heading {
+        letter-spacing: -1.5px;
+        @include block-heading(880px, 80px);
+    }
+    &__gray_white {
+        background-color: $light_gray;
+        .card-row__card {
+            background-color: $white;
+        }
+    }
+    &__white_gray {
+        background-color: $white;
+        .card-row__card {
+            background-color: $light_gray;
+        }
+    }
+    &__card {
+        border-radius: 8px;
+        padding: 41px 37px 36px;
+        &__heading {
+            font-family: 'Gelion', sans-serif;
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            @include breakpoint(440px) {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+        }
+        &__content {
+            font-size: 20px;
+            line-height: 32px;
+        }
+        &__quote {
+            font-size: 20px;
+            line-height: 32px;
+            @include breakpoint(440px) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+            &__item {
+                &:not(:first-child) {
+                    padding-top: 21px;
+                }
+                &:not(:last-child) {
+                    padding-bottom: 21px;
+                    border-bottom: 1px solid $gray;
+                }
+            }
+        }
+        // @include breakpoint(991px) {
+        //     width: calc(50% - 12px) !important;
+        //     flex-basis: calc(50% - 12px) !important;
+        //     margin-bottom: 24px;
+        // }
+        // @include breakpoint(768px) {
+        //     width: 100% !important;
+        //     flex-basis: 100% !important;
+        // }
+    }
+}

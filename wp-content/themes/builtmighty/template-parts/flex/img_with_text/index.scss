@@ -1,0 +1,56 @@
+.image_with_text{
+    padding: 70px 0;
+    @include breakpoint(440px) {
+        padding: 20px;
+    }
+    .container {
+        display: flex;
+        @include breakpoint(440px) {
+            display: grid;
+            text-align: center;
+        }
+        .first_half, .second_half {
+            width: 50%;
+            padding: 0 45px;
+            margin-top: auto;
+            margin-bottom: auto;
+            @include breakpoint(440px) {
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+        img {
+            width: 100%;
+        }
+        .image {
+            @include breakpoint(440px) {
+                order: 1;
+            }
+        }
+        .content {
+            @include breakpoint(440px) {
+                order: 2;
+            }
+        }
+    }
+    &_subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        @include breakpoint(440px) {
+            font-size: 13px;
+        }
+    }
+    &_title {
+        letter-spacing: -1.5px;
+        margin: 0%;
+    }
+    &_content {
+        font-size: 20px;
+        line-height: 32px;
+        @include breakpoint(440px) {
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+}

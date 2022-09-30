@@ -1,0 +1,30 @@
+body {
+  font-family: $main_font;
+  font-weight: 400;
+  margin: 0;
+  &.admin-bar {
+    position: relative !important;
+  }
+  &.logged-in {
+    padding-top: 0px !important;
+  }
+  a {
+    text-decoration: none;
+    color: $constant_blue;
+    &:hover {
+      color: $black;
+    }
+  }
+  figure {
+    margin: 0;
+  }
+  img#wpstats {
+    display: none;
+  }
+  .bm-seperator {
+    margin-bottom: 60px;
+    hr {
+      color: $light_charcoal;
+    }
+  }
+}

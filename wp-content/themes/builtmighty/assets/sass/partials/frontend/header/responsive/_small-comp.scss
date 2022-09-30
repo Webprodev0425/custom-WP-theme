@@ -1,0 +1,15 @@
+@include breakpoint(small-comp) {
+  #site-header {
+    svg {
+      width: 220px;
+    }
+    .container {
+      margin: 0;
+    }
+  }
+  #primary-menu {
+    li {
+      padding: 0 6.5px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.author {
+  .author-header {
+    position: relative;
+    background: $constant_blue;
+    margin-bottom: 60px;
+    margin-top: 90px;
+    .author-intro {
+      .author-mug {
+        margin-right: 21px;
+        max-height: 300px;
+        &.guest {
+          position: relative;
+          overflow: hidden;
+          width: 300px;
+          height: 300px;
+          img {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+    .author-info {
+      color: $white;
+      padding: 18px 48px 18px 63px;
+      .author-meta {
+        padding-right: 12px;
+        border-right: 6px solid $apricot;
+        margin: 0 0 21px;
+        h1 {
+          margin-top: 0;
+          font-size: 30px;
+          margin-bottom: 3px;
+        }
+        .author-website {
+          color: $apricot;
+          &:hover {
+            color: $retro_green;
+          }
+        }
+        .social-links {
+          list-style: none;
+          margin-top: 0;
+          margin-bottom: 0;
+          li {
+            margin-left: 6px;
+            a {
+              @include ease(0.3s, all);
+              font-size: 21px;
+              color: $retro_green;
+            }
+            &:hover {
+              a {
+                color: $apricot_hover;
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+      aside {
+        text-align: right;
+        font-size: 18px;
+        line-height: 29px;
+        a {
+          color: $retro_green;
+          &:hover {
+            color: $apricot;
+          }
+        }
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "AUTHOR";
+      background-color: $apricot;
+      color: $white;
+      padding: 3px 12px;
+      top: -17px;
+      left: -10px;
+      font-weight: bold;
+    }
+  }
+}

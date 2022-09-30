@@ -1,0 +1,107 @@
+.grid-points {
+    padding: 90px 50px;
+    @include breakpoint(440px) {
+        padding: 50px 20px;
+    }
+    &__heading {
+        letter-spacing: -1.5px;
+        @include block-heading(560px, 47px);
+    }
+    &__subheading {
+        text-align: center;
+        font-size: 20px;
+        line-height: 32px;
+        margin: 0 0 90px;
+        @include breakpoint(440px) {
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+    &__column {
+        &-right {
+            text-align: right;
+            @include breakpoint(991px) {
+                margin-top: 45px;
+                text-align: center;
+                @include breakpoint(440px) {
+                    order: 1;
+                    margin-top: 0;
+                }
+            }
+        }
+        &-left {
+            @include breakpoint(440px) {
+                order: 2;
+                margin-top: 40px;
+            }
+        }
+        &-left, 
+        &-right {
+            @include breakpoint(991px) {
+                width: 100% !important;
+                flex-basis: 100% !important;
+            }
+        }
+    }
+    &__point {
+        padding-right: 60px;
+        span {
+            @include ease(.3s, all);
+            color: #E5740B;
+            font-family: 'Gelion', sans-serif;
+            font-style: italic;
+            font-size: 24px;
+            line-height: 28.79px;
+            font-weight: 600;
+            letter-spacing: -1.5px;
+            margin-bottom: 7px;
+        }
+        &__heading {
+            font-family: 'Gelion', sans-serif;
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: -0.5px;
+            margin: 0 0 5px;
+            @include breakpoint(440px) {
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+        &__content {
+            font-size: 20px;
+            line-height: 32px;
+            @include breakpoint(440px) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+        &:nth-last-child(n+3) {
+            margin-bottom: 90px;
+        }
+        &:hover {
+            span {
+                font-size: 30px;
+            }
+        }
+        @include breakpoint(991px) {
+            padding-left: 0 !important;
+            &:nth-child(even) {
+                padding-right: 0;
+            }
+        }
+        @include breakpoint(768px) {
+            padding-right: 0;
+            margin-bottom: 45px !important;
+            width: 100% !important;
+            flex-basis: 100% !important;
+        }
+    }
+    .container {
+        .flex {
+            @include breakpoint(440px) {
+                display: grid;
+            }
+        }
+    }
+}

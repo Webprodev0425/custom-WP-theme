@@ -1,0 +1,57 @@
+%grid {
+    display:grid;
+}
+.grid {
+    @extend %grid;
+}
+
+// fractional widths
+.gr {
+    &_1_2 {
+        &-all {
+            grid-column: 1 / span 2;
+        }
+        &-1 {
+            grid-column: 1;
+        }
+        &-2 {
+            grid-column: 2 / span 1;
+        }
+    }
+    &_1_3 {
+        &-1 {
+            grid-column: 1;
+        }
+        &-2 {
+            grid-column: 2 / span 1;
+        }
+    }
+    &_2_3 {
+        &-2 {
+            grid-column: 2 / span 2;
+        }
+        &-1 {
+            grid-column: 1 / span 2;
+        }
+    }
+    &_2_5 {
+        &-1 {
+            grid-column: 1 / span 2;
+        }
+        &-2 {
+            grid-column: 4 / span 2;
+        }
+    }
+    &_3_5 {
+        &-1 {
+            grid-column: 1 / span 3;
+        }
+        &-2 {
+            grid-column: 3 / span 3;
+        }
+    }
+}
+@mixin gridLayout($rows: 1, $columns: 1) {
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
+}

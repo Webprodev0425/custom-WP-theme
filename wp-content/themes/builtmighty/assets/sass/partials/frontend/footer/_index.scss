@@ -1,0 +1,92 @@
+.site-footer {
+    position: relative;
+    padding: 0 100px;
+    * {
+      color: $black;
+    }
+    a {
+      @include ease(0.3s, all);
+      &:hover {
+        color: $red;
+      }
+    }
+    &__top-row {
+      padding: 100px 0 50px;
+    }
+    &__logo {
+      @include breakpoint(991px) {
+        width:100% !important;
+        flex-basis: 100% !important;
+      }
+    }
+    &__woo-logo {
+      max-width: 200px;
+      margin-top: 50px;
+      @include breakpoint(991px) {
+        width:100% !important;
+        flex-basis: 100% !important;
+      }
+    }
+    &__menu {
+      h4 {
+        font-family: 'Gelion', sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.5px;
+        font-weight: 600;
+        margin: 0 0 30px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        line-height: 35px;
+        max-width: 100%;
+      }
+      p {
+        font-size: 14px;
+        line-height: 35px;
+        margin: 0;
+      }
+      &-items {
+        #footer-menu {
+          @include breakpoint(768px) {
+            flex-direction: column !important;
+            flex-wrap: nowrap;
+            -webkit-flex-flow: nowrap;
+          }
+        }
+        li {
+          width: 50%;
+          flex-basis: 50%;
+          @include breakpoint(768px) {
+            width:100% !important;
+            flex-basis: 100% !important;
+          }
+        }
+      }
+      @include breakpoint(991px) {
+        width:50% !important;
+        flex-basis: 50% !important;
+        margin-top: 65px;
+      }
+    }
+    &__copyright {
+      font-size: 12px;
+      line-height: 21px;
+      padding: 35px 0;
+      @include breakpoint(440px) {
+        padding: 12px 0 0;
+      }
+    }
+    .dots {
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+    @include breakpoint(440px) {
+        padding: 45px;
+    }
+  }
+  

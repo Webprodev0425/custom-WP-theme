@@ -1,0 +1,172 @@
+.testimonial {
+    padding: 100px 12px;
+    position: relative;
+    &-col {
+        // grid-column: 1 / span 2;
+        @include breakpoint(768px) {
+            width: 100% !important;
+            flex-basis: 100% !important;
+            // padding: 0 !important;
+            // &:first-child {
+            //     margin-bottom: 90px;
+            // }
+        }
+    }
+    &.gray {
+        background-color: $light_gray;
+    }
+    .container {
+        @include breakpoint(768px) {
+            padding: 0 45px;
+        }
+        @include breakpoint(465px) {
+            padding: 20px;
+        }
+        .container {
+            @include breakpoint(465px) {
+                padding: 0px;
+                order: 2;
+                display: block;
+            }
+        }
+    }
+    .top_img {
+        max-width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        @include breakpoint(768px) {
+            max-width: 100%;
+        }
+    }
+    .dots-left {
+        position:absolute;
+        bottom:100px;
+        left:-200px;
+        @include breakpoint(465px) {
+            display: none;
+        }
+        &__bottom {
+            position:absolute;
+            bottom:-170px;
+            left:0px;
+            z-index: 9;
+        }
+        &__top {
+            position:absolute;
+            top:-170px;
+            left:0px;
+            z-index: 9;
+        }
+    }
+    .dots-right {
+        position:absolute;
+        top:-20px;
+        right:-200px;
+        @include breakpoint(465px) {
+            display: none;
+        }
+        &__top {
+            position: absolute;
+            right: 0%;
+            top: -170px;
+        }
+    }
+    &__quote-highlight {
+        font-size: 56px;
+        line-height: 56px;
+        font-weight:700;
+        max-width: 560px;
+        margin: 0 0 25px 0;
+        padding: 0 25px;
+        letter-spacing: -1.5px;
+        &__wide {
+            font-size: 56px;
+            line-height: 56px;
+            font-weight: 600;
+            max-width: 600px;
+            margin: 0 0 25px 0;
+            padding: 0 25px;
+            letter-spacing: -1.5px;
+            @include breakpoint(465px) {
+                font-size: 36px;
+                line-height: 40px;
+                padding: 0px;
+            }
+        }
+        &__icon {
+            margin-bottom: 16px;
+            padding: 0 25px;
+            @include breakpoint(768px) {
+                padding: 0;
+            }
+        }
+        @include breakpoint(991px) {
+            max-width: 100%;
+        }
+        @include breakpoint(768px) {
+            max-width: 100%;
+            padding: 0;
+        }
+        @include breakpoint(440px) {
+            font-size: 36px;
+            line-height: 40px;
+        }
+    }
+    &__short-side {
+        @include breakpoint(768px) {
+            grid-column: 1 / span 5;
+        }
+        @include breakpoint(465px) {
+            order: 2;
+        }
+    }
+    &__long-side {
+        padding: 50px 25px 50px 75px;
+        @include breakpoint(768px) {
+            grid-column: 1 / span 5;
+            padding: 0px 0px 45px;
+        }
+        @include breakpoint(465px) {
+            order: 1;
+        }
+    }
+    &__long-quote {
+        font-size: 20px;
+        letter-spacing: -0.5px;
+        line-height: 32px;
+        font-weight:400;
+        margin: 0 0 20px;
+        padding: 0 25px;
+        @include breakpoint(768px) {
+            font-size: 21px;
+            line-height: 28px;
+        }
+        @include breakpoint(465px) {
+            padding: 0;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+    &__quote-highlight, 
+    &__long-quote {
+        font-family: "Gelion", sans-serif;
+    }
+    &__credit {
+        font-family: "Inter V", sans-serif;
+        color: $black;
+        opacity: 0.5;
+        padding: 0 25px;
+        &__company {
+            font-style: italic;
+        }
+        p {
+            margin:0;
+        }
+    }
+    @include breakpoint(768px) {
+        padding: 150px 0;
+    }
+    @include breakpoint(440px) {
+        padding: 90px 0;
+    }
+}

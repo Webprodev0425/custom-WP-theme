@@ -1,0 +1,30 @@
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+    color: $charcoal;
+    &.noscroll {
+      overflow-y: hidden;
+    }
+    &.error404 {
+      section.error {
+        margin: 60px auto 90px;
+        h1 {
+          color: $constant_blue;
+          span {
+            color: $apricot;
+            font-size: 120px;
+          }
+        }
+        p {
+          font-size: 21px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.case_studies_with_category {
+    padding: 70px;
+    @include breakpoint(465px) {
+        padding: 70px 20px;
+    }
+    &__heading {
+        letter-spacing: -1.5px;
+        margin-bottom: 0px;
+        text-align: center;
+        p {
+            margin: 0;
+        }
+    }
+    &_items {
+        margin-top: 80px;
+        @include breakpoint(465px) {
+            margin-top: 0px;
+        }
+        display: flex;
+        width: 100%;
+        flex-basis: 100%;
+        justify-content: space-between;
+    }
+    &_item {
+        width: 25%;
+        text-align: center;
+        padding: 50px 0;
+        @include ease(0.3s, all);
+        img {
+            width: 100%;
+        }
+        h3 {
+            display: none;
+            @include breakpoint(465px) {
+                display: block;
+            }
+        }
+    }
+    .slick-center {
+        img {
+            transform: scale(1.3);
+        }
+        h3 {
+            display: block;
+        }
+    }
+    .button {
+        @extend %button;
+    }
+}
