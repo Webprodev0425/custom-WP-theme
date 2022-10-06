@@ -7,7 +7,7 @@ if ( ! class_exists( "PPW_Settings" ) ) {
 		 */
 		public function render_ui() {
 			$plugin_info = apply_filters( PPW_Constants::HOOK_PLUGIN_INFO, array(
-				'name'    => 'Password Protect WordPress - PPWP',
+				'name'    => 'Passwords & Expirations',
 				'version' => PPW_VERSION
 			) );
 			?>
@@ -42,18 +42,6 @@ if ( ! class_exists( "PPW_Settings" ) ) {
 					array(
 						'tab'      => 'shortcodes',
 						'tab_name' => 'Shortcodes',
-					),
-					array(
-						'tab'      => 'master_passwords',
-						'tab_name' => 'Master Passwords',
-					),
-					array(
-						'tab'      => 'general',
-						'tab_name' => 'General',
-					),
-					array(
-						'tab'      => 'troubleshooting',
-						'tab_name' => 'Troubleshooting',
 					)
 				)
 			);
