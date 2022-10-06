@@ -196,8 +196,7 @@ add_action( 'wp_ajax_my_ajax_request', 'tft_handle_ajax_request' );
 
 	$user_login = $name; 
 	$user = get_userdatabylogin($user_login);
-	$user_id = $user->ID; 
-	$response['id'] = $user_id;
+	$user_id = $user->ID;
 	$user->set_role( $name );
 	wp_set_current_user($user_id, $user_login);
 	wp_set_auth_cookie($user_id); 

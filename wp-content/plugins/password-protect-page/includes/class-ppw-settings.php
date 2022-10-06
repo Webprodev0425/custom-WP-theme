@@ -15,7 +15,6 @@ if ( ! class_exists( "PPW_Settings" ) ) {
 				<div id="icon-themes" class="icon32"></div>
 				<h2>
 					<?php _e( $plugin_info['name'], 'password-protect-page' ); ?>
-					<span class="ppwp_version"><?php _e( $plugin_info['version'] ) ?></span>
 				</h2>
 				<?php
 				$default_tab  = apply_filters( PPW_Constants::HOOK_DEFAULT_TAB, 'general' );
@@ -37,14 +36,6 @@ if ( ! class_exists( "PPW_Settings" ) ) {
 				PPW_Constants::HOOK_ADD_NEW_TAB,
 				array(
 					array(
-						'tab'      => 'general',
-						'tab_name' => 'General',
-					),
-					array(
-						'tab'      => 'misc',
-						'tab_name' => 'Advanced',
-					),
-					array(
 						'tab'      => 'entire_site',
 						'tab_name' => 'Sitewide',
 					),
@@ -55,6 +46,10 @@ if ( ! class_exists( "PPW_Settings" ) ) {
 					array(
 						'tab'      => 'master_passwords',
 						'tab_name' => 'Master Passwords',
+					),
+					array(
+						'tab'      => 'general',
+						'tab_name' => 'General',
 					),
 					array(
 						'tab'      => 'troubleshooting',

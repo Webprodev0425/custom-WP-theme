@@ -268,64 +268,12 @@ class PPW_Admin {
 	 */
 	public function ppw_add_menu() {
 		$setting_page = new PPW_Settings();
-		add_menu_page( 'Protect Password Settings', 'Password Protect WordPress', ppw_get_allowed_capability(), PPW_Constants::MENU_NAME, array(
+		add_menu_page( 'Protect Password Settings', 'Passwords', ppw_get_allowed_capability(), PPW_Constants::MENU_NAME, array(
 			$setting_page,
 			'render_ui'
 		), PPW_DIR_URL . 'admin/images/ppw-icon-20x20.png' );
 		add_submenu_page( PPW_Constants::MENU_NAME, __( 'PPWP › Settings', PPW_Constants::DOMAIN ), __( 'Settings', PPW_Constants::DOMAIN ), ppw_get_allowed_capability(), PPW_Constants::MENU_NAME );
-		$this->partial_protection_submenu();
 
-		// Hide sitewide when Pro activate.
-		if ( ! is_pro_active_and_valid_license() ) {
-			$this->sitewide_submenu();
-		}
-
-		$this->load_external_submenu();
-	}
-
-	/**
-	 * Add sitewide submenu
-	 */
-	public function sitewide_submenu() {
-		$setting_page = new PPW_Sitewide_Settings();
-
-		add_submenu_page( PPW_Constants::MENU_NAME, __( 'PPWP › Sitewide', PPW_Constants::DOMAIN ), __( 'Sitewide Protection', PPW_Constants::DOMAIN ), ppw_get_allowed_capability(), PPW_Constants::SITEWIDE_PAGE_PREFIX, array(
-			$setting_page,
-			'render_ui',
-		) );
-	}
-
-
-	/**
-	 * Add external submenu.
-	 */
-	public function load_external_submenu() {
-		$setting_page = new PPW_External_Settings();
-
-		add_submenu_page(
-			PPW_Constants::MENU_NAME,
-			__( 'PPWP › Integrations', PPW_Constants::DOMAIN ),
-			__( 'Integrations', PPW_Constants::DOMAIN ),
-			ppw_get_allowed_capability(),
-			PPW_Constants::EXTERNAL_SERVICES_PREFIX,
-			array(
-				$setting_page,
-				'render_ui',
-			)
-		);
-	}
-
-	/**
-	 * Add Partial Protection submenu.
-	 */
-	public function partial_protection_submenu() {
-		$setting_page = new PPW_Partial_Protection_Settings();
-		add_submenu_page( PPW_Constants::MENU_NAME, __( 'PPWP › Partial Protection', 'password-protect-page' ), __( 'Partial Protection', 'password-protect-page' ),
-			ppw_get_allowed_capability(), PPW_Constants::PCP_PAGE_PREFIX, array(
-				$setting_page,
-				'render_ui'
-			)
-		);
 	}
 
 	/**
@@ -390,12 +338,27 @@ class PPW_Admin {
 	 */
 	public function ppw_free_render_content_general() {
 		?>
-		<div class="ppw_setting_page">
 			<?php
-			include PPW_DIR_PATH . 'includes/views/general/view-ppw-general.php';
-			include PPW_DIR_PATH . 'includes/views/sidebar/view-ppw-sidebar.php';
+			wp_enqueue_script( 'ppw-master-passwords-js', PPW_DIR_URL . 'includes/views/master-passwords/assets/ppw-master-passwords.js', array( 'jquery' ), PPW_VERSION, true );
+			wp_enqueue_style( 'ppw-master-passwords-css', PPW_DIR_URL . 'includes/views/master-passwords/assets/ppw-master-passwords.css', array(), PPW_VERSION, 'all' );
+			$post_types_selected     = $this->free_services->get_protection_post_types_select();
+			$protection_types        = apply_filters( 'ppw_master_password_protection_types', [] );
+			$allowed_protection_type = ppw_allowed_master_protection_type();
+			wp_localize_script(
+				'ppw-master-passwords-js',
+				'ppwMasterPasswords',
+				array(
+					'restUrl'               => get_rest_url(),
+					'nonce'                 => wp_create_nonce( 'wp_rest' ),
+					'roles'                 => array_keys( get_editable_roles() ),
+					'postTypes'             => $post_types_selected,
+					'pro'                   => is_pro_active_and_valid_license(),
+					'protectionTypes'       => $protection_types,
+					'allowedProtectionType' => $allowed_protection_type,
+				)
+			);
+			include PPW_DIR_PATH . 'includes/views/master-passwords/view-ppw-master-passwords.php';
 			?>
-		</div>
 		<?php
 	}
 
