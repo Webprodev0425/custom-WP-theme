@@ -1,0 +1,9 @@
+/* follow WP 5.3 defautl styling for input field */
+.ppw_main_container input[type=text], .ppw_main_container input[type=password] {
+    padding: 0 8px; // follow WP 5.3 defautl styling
+}
+
+/* make select = input height */
+.ppw_main_container select {
+    min-height: 30px;
+}

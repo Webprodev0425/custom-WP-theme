@@ -1,0 +1,55 @@
+.pda-form-login {
+  padding: 8% 0 0;
+  margin: auto;
+  width: 320px;
+}
+
+.pda-form-login a.ppw-swp-logo {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 25px;
+  text-indent: -9999px;
+  display: block;
+}
+
+.pda-form-login form {
+  padding: 26px 24px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+  box-sizing: border-box;
+}
+
+.pda-form-login p {
+  margin-top: 0;
+}
+
+.pda-form-login .button-login {
+  text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+  cursor: pointer;
+  border-style: solid;
+  border-radius: 3px;
+  font-family: inherit;
+  padding: 0.5rem;
+}
+
+.pda-form-login .input_wp_protect_password {
+  background: #fbfbfb;
+  width: 100%;
+  padding: 9px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.ppw-entire-site-password-error,
+.ppw_entire_site_password_error {
+  color: #dc3232;
+  display: none;
+  font-size: 13px;
+}
+
+.ppw-entire-site-password-error,
+.ppw_entire_site_password_error,
+.ppw-show-password {
+  margin-bottom: 1rem;
+}

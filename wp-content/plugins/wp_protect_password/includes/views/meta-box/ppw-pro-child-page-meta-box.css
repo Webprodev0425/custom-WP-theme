@@ -1,0 +1,54 @@
+.ppw_unprotected_button {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 16px;
+    background-color: #ff8935;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+}
+
+.ppw_unprotected_button:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    right: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.ppw_protected_button {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+}
+
+.ppw_protected_button:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.ppw_protect_label {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#ppw_message_for_child_page {
+    margin-top: 10px;
+}

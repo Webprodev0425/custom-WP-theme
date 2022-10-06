@@ -1,0 +1,436 @@
+# Copyright (C) 2022 Thumbnail Slider With Lightbox
+# This file is distributed under the same license as the Thumbnail Slider With Lightbox package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Thumbnail Slider With Lightbox 1.0.16\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-responsive-"
+"slider-with-lightbox\n"
+"POT-Creation-Date: 2022-03-10 02:32:16+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: wp-responsive-slider-with-lightbox.php:228
+msgid ""
+"Responsive slider with lightbox is active but does not have write permission "
+"on"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:228
+msgid "directory.Please allow write permission."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:235
+msgid ""
+"Responsive slider with lightbox is active but plugin does not have "
+"permission to create directory"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:235
+msgid ""
+"Please create wp-image-slider-with-lightbox directory inside upload "
+"directory and allow write permission."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:339
+msgid "Responsive Slider plus Lightbox"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:340
+msgid "Manage Sliders"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:340
+#: wp-responsive-slider-with-lightbox.php:503
+msgid "Slider Settings"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:341
+msgid "Manage Images"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:342
+msgid "Preview Slider"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:370
+#: wp-responsive-slider-with-lightbox.php:871
+#: wp-responsive-slider-with-lightbox.php:1999
+#: wp-responsive-slider-with-lightbox.php:3102
+msgid "Access Denied"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:448
+msgid "Settings saved successfully."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:501
+#: wp-responsive-slider-with-lightbox.php:930
+#: wp-responsive-slider-with-lightbox.php:1536
+#: wp-responsive-slider-with-lightbox.php:2031
+msgid "UPGRADE TO PRO VERSION"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:511
+msgid "Auto Scroll?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:517
+msgid "Auto"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:517
+msgid "Scroll By Left & Right Arrow"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:517
+msgid "Scroll Auto With Arrow"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:527
+msgid "Speed"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:543
+msgid "Pause"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:554
+msgid "The amount of time (in ms) between each auto transition"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:559
+#: wp-responsive-slider-with-lightbox.php:564
+msgid "Circular Slider?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:575
+msgid "Slider Background color"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:591
+msgid "Max Visible"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:597
+msgid "This will decide your slider width automatically"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:602
+msgid "Specify the number of items visible at all times within the slider."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:608
+msgid "Min Visible"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:614
+msgid "This will decide your slider width in responsive layout"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:619
+msgid "The responsive layout decide by slider itself using min visible."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:625
+msgid "Scroll"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:636
+msgid ""
+"You can specify the number of items to scroll when you click the next or "
+"prev buttons."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:641
+#: wp-responsive-slider-with-lightbox.php:646
+msgid "Pause On Mouse Over?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:657
+msgid "Image Height"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:673
+msgid "Image Width"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:689
+msgid "Image Margin"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:695
+msgid "Gap between two images"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:705
+msgid "Show Caption?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:710
+#: wp-responsive-slider-with-lightbox.php:725
+msgid "Yes"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:710
+#: wp-responsive-slider-with-lightbox.php:725
+msgid "No"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:720
+msgid "Show Pager?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:735
+#: wp-responsive-slider-with-lightbox.php:1757
+msgid "Save Changes"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:735
+#: wp-responsive-slider-with-lightbox.php:1757
+msgid "Cancel"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:817
+#: wp-responsive-slider-with-lightbox.php:1309
+#: wp-responsive-slider-with-lightbox.php:1810
+msgid "Access All Themes One price"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:827
+#: wp-responsive-slider-with-lightbox.php:1319
+#: wp-responsive-slider-with-lightbox.php:1820
+msgid "Google For Business Coupon"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:881
+msgid "Please wait while uploading images..."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:931
+msgid "Images"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:931
+msgid "Add New"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:934
+msgid "Mass Add"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:942
+#: wp-responsive-slider-with-lightbox.php:1153
+msgid "Bulk Actions"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:943
+#: wp-responsive-slider-with-lightbox.php:1080
+#: wp-responsive-slider-with-lightbox.php:1125
+#: wp-responsive-slider-with-lightbox.php:1154
+msgid "Delete"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:945
+#: wp-responsive-slider-with-lightbox.php:1157
+msgid "Apply"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1019
+#: wp-responsive-slider-with-lightbox.php:1021
+msgid "Search"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1022
+msgid "Reset Search"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1048
+msgid "Current slider setting - Total visible images"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1049
+msgid "Please add atleast"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1049
+msgid "images"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1059
+#: wp-responsive-slider-with-lightbox.php:1062
+#: wp-responsive-slider-with-lightbox.php:1064
+#: wp-responsive-slider-with-lightbox.php:1119
+msgid "Title"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1070
+#: wp-responsive-slider-with-lightbox.php:1073
+#: wp-responsive-slider-with-lightbox.php:1075
+#: wp-responsive-slider-with-lightbox.php:1123
+msgid "Published On"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1079
+#: wp-responsive-slider-with-lightbox.php:1124
+msgid "Edit"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1118
+msgid "Select Record"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1124
+msgid "Edit Record"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1125
+msgid "Delete Record"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1134
+msgid "No Record"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1134
+msgid "No Images Found"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1170
+msgid "Are you sure you want to delete selected images?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1178
+msgid "Are you sure you want to delete this image?"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1200
+#: wp-responsive-slider-with-lightbox.php:1635
+msgid "WP Media Uploader"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1206
+#: wp-responsive-slider-with-lightbox.php:1641
+msgid "Set Image"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1300
+#: wp-responsive-slider-with-lightbox.php:2496
+msgid "To print this slider into WordPress Post/Page use below Short code"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1303
+#: wp-responsive-slider-with-lightbox.php:2499
+msgid ""
+"To print this slider into WordPress theme/template PHP files use below php "
+"code"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1361
+#: wp-responsive-slider-with-lightbox.php:1447
+#: wp-responsive-slider-with-lightbox.php:1554
+#: wp-responsive-slider-with-lightbox.php:1589
+#: wp-responsive-slider-with-lightbox.php:1857
+#: wp-responsive-slider-with-lightbox.php:1921
+msgid "Access Denied. Please contact your administrator."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1421
+msgid "Image updated successfully."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1430
+msgid "Error while updating image."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1513
+msgid "New image added successfully."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1522
+msgid "Error while adding image."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1575
+msgid "Update Image"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1597
+msgid "Add Image"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1609
+msgid "Current Image :"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1615
+msgid "Click here add image"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1730
+msgid "Image Title"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1736
+msgid "Used in image alt for seo"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1740
+msgid "Lightbox Caption Image Url"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1740
+msgid "On click redirect to this url."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1746
+msgid "On image click users will redirect to this url."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1796
+msgid "Please select file"
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1891
+msgid "Image deleted successfully."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1901
+#: wp-responsive-slider-with-lightbox.php:1972
+msgid "Error while deleting image."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:1961
+msgid "Selected images deleted successfully."
+msgstr ""
+
+#: wp-responsive-slider-with-lightbox.php:2016
+msgid "Slider Preview"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Thumbnail Slider With Lightbox"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://www.i13websolution.com/product/wordpress-responsive-slider-with-"
+"responsive-lightbox/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This is beautiful responsive thumbnail image slider with responsive lightbox."
+"Add any number of images from admin panel."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "I Thirteen Web Solution"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.i13websolution.com"
+msgstr ""
