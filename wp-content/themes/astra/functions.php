@@ -188,19 +188,56 @@ add_action( 'wp_ajax_my_ajax_request', 'tft_handle_ajax_request' );
   function tft_handle_ajax_request() {
     $name	= isset($_POST['name'])?trim($_POST['name']):"";
 	$email	= isset($_POST['email'])?trim($_POST['email']):"";
+	$pass	= isset($_POST['pass'])?trim($_POST['pass']):"";
     $response	= array();
     $response['name']	= $name;
 	$response['email']	= $email;
-	add_role( $name, __( $name ), array( 'read'         => true, 'edit_posts'   => false ) );
-	wp_create_user( $name, 'password_'.$name, $email );
+	$response['pass']	= $pass;
 
-	$user_login = $name; 
+	//create a new role for the user
+	add_role( $name, __( $name ), array( 'read'         => true, 'edit_posts'   => false ) );
+
+	//create a new user account
+	wp_create_user( $name, $pass, $email );
+
+	//add a new role to the user
+	$user_login = $name;
 	$user = get_userdatabylogin($user_login);
 	$user_id = $user->ID;
 	$user->set_role( $name );
+
+	//auto login
 	wp_set_current_user($user_id, $user_login);
 	wp_set_auth_cookie($user_id); 
 	do_action('wp_login', $user_login); 
+
+	//DB connection
+	$servername = "localhost";
+	$database = "child";
+	$username = "root";
+	$password = "";
+
+	$conn = mysqli_connect($servername, $username, $password, $database);
+
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	//generate a new password and expiration date
+	$table_name = "wp_pda_passwords";
+	$created_time = time();
+	$expired_time = $created_time + 2592000;
+	$role = 'master_role_' .$name;
+
+	$sql = "INSERT INTO $table_name (campaign_app_type, `password`, created_time, expired_date, label, post_types) VALUES ('$role', '$pass', $created_time, $expired_time, '', 'post')";
+
+	if (mysqli_query($conn, $sql)) {
+		echo "New record created successfully";
+	  } else {
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	  }
+	
+	mysqli_close($conn);
 
     echo json_encode($response);
     exit;

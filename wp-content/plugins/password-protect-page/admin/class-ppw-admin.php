@@ -237,7 +237,7 @@ class PPW_Admin {
 			array(
 				'ajax_url'    => admin_url( 'admin-ajax.php' ),
 				'nonce'       => wp_create_nonce( PPW_Constants::ROW_ACTION_NONCE ),
-				'plugin_name' => 'Password Protect WordPress Lite',
+				'plugin_name' => 'Password Protect WordPress',
 			)
 		);
 		$this->free_asset_services->load_toastr_lib();
@@ -1001,11 +1001,6 @@ _end_;
 	 * @return array
 	 */
 	public function register_plugins_links( $plugin_meta, $plugin_file ) {
-		if ( PPW_PLUGIN_BASE_NAME === $plugin_file ) {
-			$misc_setting = admin_url( 'admin.php?page=wp_protect_password_options&tab=misc' );
-			$plugin_meta[] = '<a href="' . $misc_setting . '">' . __( 'Restore passwords', 'password-protect-page' ) . '</span>';
-		}
-
 		return $plugin_meta;
 	}
 

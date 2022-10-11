@@ -13,14 +13,14 @@
  * @package           Password_Protect_Page
  *
  * @wordpress-plugin
- * Plugin Name:       Password Protect WordPress Lite
- * Plugin URI:        https://passwordprotectwp.com?utm_source=user-website&utm_medium=pluginsite_link&utm_campaign=ppwp_lite
- * Description:       Password protect the entire WordPress site, unlimited pages and posts by user roles. This plugin is required for our Pro version to work properly.
+ * Plugin Name:       Protect Posts with Passwords & Expiration Dates
+ * Plugin URI:        https://l33devsite.kinsta.cloud/
+ * Description:       Protect by passwords and expiration dates for each user.
  * Version:           1.8.4
- * Author:            BWPS
- * Author URI:        https://passwordprotectwp.com
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Author:            L33
+ * Author URI:        https://l33devsite.kinsta.cloud/
+ * License:           L33
+ * License URI:       https://l33devsite.kinsta.cloud/
  * Text Domain:       password-protect-page
  * Domain Path:       /languages
  */
