@@ -87,25 +87,6 @@ if ( ! class_exists( 'PPW_Customizer_Sitewide' ) ) {
 				include PPW_DIR_PATH . 'includes/customizers/class-ppw-toggle-control.php';
 			}
 
-			/* register toggle control */
-			$wp_customize->register_control_type( 'PPW_Toggle_Control' );
-			$wp_customize->register_control_type( 'PPW_Title_Group_Control' );
-
-			$wp_customize->add_panel( 'ppwp_sitewide',
-				array(
-					'priority'       => 9980,
-					'capability'     => 'edit_theme_options',
-					'theme_supports' => '',
-					'title'          => __( 'PPWP Sitewide Login Form', 'password-protect-page' ),
-				)
-			);
-
-			/* form logo section */
-			$wp_customize->add_section( 'ppwp_pro_form_logo', array(
-				'title'    => __( 'Logo', 'password-protect-page' ),
-				'panel'    => 'ppwp_sitewide',
-				'priority' => 100,
-			) );
 
 			// Add an option to disable the logo.
 			$wp_customize->add_setting( 'ppwp_pro_logo_disable' );

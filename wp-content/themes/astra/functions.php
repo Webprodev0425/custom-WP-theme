@@ -239,6 +239,13 @@ add_action( 'wp_ajax_my_ajax_request', 'tft_handle_ajax_request' );
 	
 	mysqli_close($conn);
 
+    $subject = 'Your Password';
+    $message = "<div>Hi ". $name. ",". "</div>"."Your password is generated. Please use this password '". $pass . "' to see the <a href='http://localhost/wordpress/project-fluidigm/'>calculator</a>";
+    $headers = "From: ".$name." \r\n";
+    $send_email = mail($email,$subject,$message,$headers);
+    $response['email_sent'] = ($send_email) ? 'success' : 'error';
+
+    echo $message;
     echo json_encode($response);
     exit;
   }

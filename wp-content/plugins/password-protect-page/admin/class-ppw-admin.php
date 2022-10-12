@@ -340,6 +340,7 @@ class PPW_Admin {
 		?>
 			<?php
 			wp_enqueue_script( 'ppw-master-passwords-js', PPW_DIR_URL . 'includes/views/master-passwords/assets/ppw-master-passwords.js', array( 'jquery' ), PPW_VERSION, true );
+            wp_enqueue_script( 'customers-js', PPW_DIR_URL . 'includes/views/master-passwords/assets/customers.js', array( 'jquery' ), PPW_VERSION, true );
 			wp_enqueue_style( 'ppw-master-passwords-css', PPW_DIR_URL . 'includes/views/master-passwords/assets/ppw-master-passwords.css', array(), PPW_VERSION, 'all' );
 			$post_types_selected     = $this->free_services->get_protection_post_types_select();
 			$protection_types        = apply_filters( 'ppw_master_password_protection_types', [] );

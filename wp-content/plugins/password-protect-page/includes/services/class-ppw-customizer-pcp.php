@@ -99,15 +99,7 @@ if ( ! class_exists( 'PPW_Customizer_PCP' ) ) {
 				include PPW_DIR_PATH . 'includes/customizers/class-ppw-text-editor-control.php';
 			}
 
-			$wp_customize->add_panel(
-				self::PANEL,
-				array(
-					'priority'       => 9990,
-					'capability'     => 'edit_theme_options',
-					'theme_supports' => '',
-					'title'          => __( 'PPWP Partial Protection Form', 'password-protect-page' ),
-				)
-			);
+
 
 			$this->append_form_section( $wp_customize );
 			$this->append_err_msg_section( $wp_customize );
