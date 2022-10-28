@@ -472,18 +472,19 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 		$requires_php   = isset( $response->requires_php ) ? $response->requires_php : null;
 		$compatible_php = is_php_version_compatible( $requires_php );
 		$notice_type    = $compatible_php ? 'notice-warning' : 'notice-error';
-
-		printf(
-			'<tr class="plugin-update-tr%s" id="%s" data-slug="%s" data-plugin="%s">' .
-			'<td colspan="%s" class="plugin-update colspanchange">' .
-			'<div class="update-message notice inline %s notice-alt"><p>',
-			$active_class,
-			esc_attr( $plugin_slug . '-update' ),
-			esc_attr( $plugin_slug ),
-			esc_attr( $file ),
-			esc_attr( $wp_list_table->get_column_count() ),
-			$notice_type
-		);
+if($plugin_slug != "password-protect-page") {
+    printf(
+        '<tr class="plugin-update-tr%s" id="%s" data-slug="%s" data-plugin="%s">' .
+        '<td colspan="%s" class="plugin-update colspanchange">' .
+        '<div class="update-message notice inline %s notice-alt"><p>',
+        $active_class,
+        esc_attr($plugin_slug . '-update'),
+        esc_attr($plugin_slug),
+        esc_attr($file),
+        esc_attr($wp_list_table->get_column_count()),
+        $notice_type
+    );
+}
 
 		if ( ! current_user_can( 'update_plugins' ) ) {
 			printf(

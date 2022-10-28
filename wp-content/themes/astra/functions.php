@@ -176,6 +176,9 @@ require_once ASTRA_THEME_DIR . 'inc/core/markup/class-astra-markup.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+acf_add_options_page(array(
+    'page_title'     => 'Site Options',
+));
 
 function mytheme_custom_scripts(){
 	$scriptSrc = get_template_directory_uri() . '/assets/js/unminified/custom.js';
@@ -194,58 +197,72 @@ add_action( 'wp_ajax_my_ajax_request', 'tft_handle_ajax_request' );
 	$response['email']	= $email;
 	$response['pass']	= $pass;
 
+      //DB connection
+      $servername = "localhost";
+      $database = "l33devsite";
+      $username = "l33devsite";
+      $password = "PMayiUb5POrkTrj";
+
+      $conn = mysqli_connect($servername, $username, $password, $database);
+
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+      }
+
 	//create a new role for the user
-	add_role( $name, __( $name ), array( 'read'         => true, 'edit_posts'   => false ) );
+      if(!current_user_can( 'manage_options' ) && !empty($name) && !empty($email)) {
+          add_role($name, __($name), array('read' => true, 'edit_posts' => false));
 
-	//create a new user account
-	wp_create_user( $name, $pass, $email );
+          //create a new user account
+          wp_create_user($name, $pass, $email);
 
-	//add a new role to the user
-	$user_login = $name;
-	$user = get_userdatabylogin($user_login);
-	$user_id = $user->ID;
-	$user->set_role( $name );
+          //add a new role to the user
+          $user_login = $name;
+          $user = get_userdatabylogin($user_login);
+          $user_id = $user->ID;
+          $user->set_role($name);
 
-	//auto login
-	wp_set_current_user($user_id, $user_login);
-	wp_set_auth_cookie($user_id); 
-	do_action('wp_login', $user_login); 
+          //auto login
+          wp_set_current_user($user_id, $user_login);
+          wp_set_auth_cookie($user_id);
+          do_action('wp_login', $user_login);
 
-	//DB connection
-	$servername = "localhost";
-	$database = "child";
-	$username = "root";
-	$password = "";
+          //generate a new password and expiration date
+          $table_name = "wp_pda_passwords";
+          $created_time = time();
+          $expired_time = $created_time + 2592000;
+          $role = 'master_role_' . $name;
 
-	$conn = mysqli_connect($servername, $username, $password, $database);
+          $sql = "INSERT INTO $table_name (campaign_app_type, `password`, created_time, expired_date, label, post_types) VALUES ('$role', '$pass', $created_time, $expired_time, '$name', 'post')";
+          if (mysqli_query($conn, $sql)) {
+              echo "added";
+              $sender = "Latitude 33 Aviation <charter@l33jets.com>";
+              $subject = 'Your Password';
+              $img = "http://l33devsite.kinsta.cloud/wp-content/uploads/2022/10/latitude33.png";
+              $footer_img = "http://l33devsite.kinsta.cloud/wp-content/uploads/2022/10/latitude33_sale.png";
+              $message = "<div style='width: 50%; margin: auto; text-align: center;'> <img src='$img' width='250'/></div>";
+              $message .= "<hr style='width: 300px; margin: 50px auto; background-color: #000;'>";
+              $message .= "<div style='width: 50%; margin: 50px auto;'>";
+              $message .= "<h3>Hi <span style='font-size: 40px;'><i>" . $name . "," . "</i></span></h3>" . "Your password is generated. Please use this password '" . $pass . "' to see the <a href='/aircraft-calculator/'>calculator</a>";
+              $message .= "</div>";
+              $message .= "<div style='background-color: #eee; padding: 30px 0;'><div style='width: 50%; margin: 0px auto;'><a href='https://l33jets.com/'><img src='$footer_img' style='width: 100%' /></a>";
+              $message .= "<p style='text-align: center;'>*Tax not included.<br>The information above is intended to be as accurate as possible; however, charter flight schedules change regularly and the flight availability on this page may not reflect all recent changes. Subject to <a href='https://l33jets.com/terms'>terms and conditions</a></p>";
+              $message .= "<p style='font-weight: bold; text-align: center;'>Latitude 33 Aviation, 2100 Palomar Airport Rd., Suite 211, Carlsbad, CA 92011</p>";
+              $message .= "</div></div>";
 
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
+              $headers = implode("From: " . $sender . " \r\n", [
+                  "MIME-Version: 1.0",
+                  "Content-type: text/html; charset=utf-8"
+              ]);
+              $send_email = mail($email, $subject, $message, $headers);
+              $response['email_sent'] = ($send_email) ? 'success' : 'error';
+          } else {
+              echo "not added";
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
 
-	//generate a new password and expiration date
-	$table_name = "wp_pda_passwords";
-	$created_time = time();
-	$expired_time = $created_time + 2592000;
-	$role = 'master_role_' .$name;
-
-	$sql = "INSERT INTO $table_name (campaign_app_type, `password`, created_time, expired_date, label, post_types) VALUES ('$role', '$pass', $created_time, $expired_time, '', 'post')";
-
-	if (mysqli_query($conn, $sql)) {
-		echo "New record created successfully";
-	  } else {
-		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-	  }
-	
-	mysqli_close($conn);
-
-    $subject = 'Your Password';
-    $message = "<div>Hi ". $name. ",". "</div>"."Your password is generated. Please use this password '". $pass . "' to see the <a href='http://localhost/wordpress/project-fluidigm/'>calculator</a>";
-    $headers = "From: ".$name." \r\n";
-    $send_email = mail($email,$subject,$message,$headers);
-    $response['email_sent'] = ($send_email) ? 'success' : 'error';
-
-    echo $message;
+          mysqli_close($conn);
+      }
     echo json_encode($response);
     exit;
   }

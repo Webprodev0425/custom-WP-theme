@@ -1148,6 +1148,7 @@ final class WP_Screen {
 
 		$columns = get_column_headers( $this );
 		$hidden  = get_hidden_columns( $this );
+        $type = $this->post_type;
 
 		if ( ! $columns ) {
 			return;
@@ -1178,9 +1179,11 @@ final class WP_Screen {
 			$title = wp_strip_all_tags( $title );
 
 			$id = "$column-hide";
-			echo '<label>';
-			echo '<input class="hide-column-tog" name="' . $id . '" type="checkbox" id="' . $id . '" value="' . $column . '"' . checked( ! in_array( $column, $hidden, true ), true, false ) . ' />';
-			echo "$title</label>\n";
+            if($id != "ppw_password_protection-hide" || $type != "page") {
+                echo '<label>';
+                echo '<input class="hide-column-tog" name="' . $id . '" type="checkbox" id="' . $id . '" value="' . $column . '"' . checked(!in_array($column, $hidden, true), true, false) . ' />';
+                echo "$title</label>\n";
+            }
 		}
 		?>
 		</fieldset>

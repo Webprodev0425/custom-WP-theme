@@ -16,7 +16,7 @@
  * Plugin Name:       Protect Posts with Passwords & Expiration Dates
  * Plugin URI:        https://l33devsite.kinsta.cloud/
  * Description:       Protect by passwords and expiration dates for each user.
- * Version:           1.8.4
+ * Version:           1.8.5
  * Author:            L33
  * Author URI:        https://l33devsite.kinsta.cloud/
  * License:           L33
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.1.2 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PPW_VERSION', '1.8.4' );
+define( 'PPW_VERSION', '9.9.9' );
 
 if ( ! defined( 'PPW_DIR_PATH' ) ) {
 	define( 'PPW_DIR_PATH', plugin_dir_path( __FILE__ ) );

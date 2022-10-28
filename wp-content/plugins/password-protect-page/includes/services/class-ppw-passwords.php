@@ -727,13 +727,14 @@ if ( ! class_exists( 'PPW_Password_Services' ) ) {
 		 */
 		public function generate_custom_row_action( $actions, $post ) {
 			$post_id           = $post->ID;
-			$is_protected      = $this->is_protected_content( $post_id );
-			$btn_label         = $is_protected ? __( 'Unprotect', 'password-protect-page' ) : __( 'Protect', 'password-protect-page' );
-			$title             = $is_protected ? __( 'Unprotect this page', 'password-protect-page' ) : __( 'Protect this page', 'password-protect-page' );
-			$protection_status = $is_protected ? PPW_Constants::PROTECTION_STATUS['unprotect'] : PPW_Constants::PROTECTION_STATUS['protect'];
+            if(get_post_type($post_id) == "post") {
+                $is_protected = $this->is_protected_content($post_id);
+                $btn_label = $is_protected ? __('Unprotect', 'password-protect-page') : __('Protect', 'password-protect-page');
+                $title = $is_protected ? __('Unprotect this page', 'password-protect-page') : __('Protect this page', 'password-protect-page');
+                $protection_status = $is_protected ? PPW_Constants::PROTECTION_STATUS['unprotect'] : PPW_Constants::PROTECTION_STATUS['protect'];
 
-			$actions['ppw_protect'] = '<a style="cursor: pointer" data-ppw-status="' . $protection_status . '" onclick="ppwpRowAction.handleOnClickRowAction(' . $post_id . ')" id="ppw-protect-post_' . $post_id . '" class="ppw-protect-action" title="' . $title . '">' . $btn_label . '</a>';
-
+                $actions['ppw_protect'] = '<a style="cursor: pointer" data-ppw-status="' . $protection_status . '" onclick="ppwpRowAction.handleOnClickRowAction(' . $post_id . ')" id="ppw-protect-post_' . $post_id . '" class="ppw-protect-action" title="' . $title . '">' . $btn_label . '</a>';
+            }
 			return $actions;
 		}
 

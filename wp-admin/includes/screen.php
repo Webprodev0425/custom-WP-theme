@@ -95,7 +95,7 @@ function get_hidden_columns( $screen ) {
  */
 function meta_box_prefs( $screen ) {
 	global $wp_meta_boxes;
-
+    $type = $screen->post_type;
 	if ( is_string( $screen ) ) {
 		$screen = convert_to_screen( $screen );
 	}
@@ -130,12 +130,14 @@ function meta_box_prefs( $screen ) {
 
 				$is_hidden = in_array( $box['id'], $hidden, true );
 
-				printf(
-					'<label for="%1$s-hide"><input class="hide-postbox-tog" name="%1$s-hide" type="checkbox" id="%1$s-hide" value="%1$s" %2$s />%3$s</label>',
-					esc_attr( $box['id'] ),
-					checked( $is_hidden, false, false ),
-					$widget_title
-				);
+                if($box['id'] != "ppw_add_meta_box" || $type != "page") {
+                    printf(
+                        '<label for="%1$s-hide"><input class="hide-postbox-tog" name="%1$s-hide" type="checkbox" id="%1$s-hide" value="%1$s" %2$s />%3$s</label>',
+                        esc_attr($box['id']),
+                        checked($is_hidden, false, false),
+                        $widget_title
+                    );
+                }
 			}
 		}
 	}
